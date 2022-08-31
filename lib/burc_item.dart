@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:burc_proje/burc.dart';
 import 'package:burc_proje/burc_detay.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +19,8 @@ class BurcItem extends StatelessWidget {
           padding: const EdgeInsets.all(6),
           child: ListTile(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          BurcDetay(secilenBurc: listelenenBurc)));
+              Navigator.pushNamed(context, '/burcDetay',
+                  arguments: listelenenBurc);
             },
             leading: Image.asset(
               "images/${listelenenBurc.burcKucukResim}",
